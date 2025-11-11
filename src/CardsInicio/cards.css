@@ -367,7 +367,7 @@
   .card {
     width: clamp(200px, 50vw, 260px);
   }
-  
+
   .image-container {
     height: clamp(240px, 50vw, 300px);
   }
@@ -378,12 +378,12 @@
     object-fit: cover;
     object-position: center 20%;
   }
-  
+
   .card h2 {
     font-size: clamp(0.9rem, 3.5vw, 1.2rem);
     padding: clamp(0.4rem, 2vw, 0.7rem);
   }
-  
+
   .card p {
     font-size: clamp(0.75rem, 2.5vw, 0.85rem);
   }
