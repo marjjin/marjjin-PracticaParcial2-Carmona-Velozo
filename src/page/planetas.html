@@ -5,17 +5,19 @@
     <link
       rel="icon"
       type="image/svg+xml"
-      href="./public/logo_dragonballapi.jpg"
+      href="public/logo_dragonballapi.jpg"
     />
-    <link rel="stylesheet" href="src/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/Header/header.css" />
+    <link rel="stylesheet" href="/src/Footer/footer.css" />
+    <link rel="stylesheet" href="../style.css" />
     <title>Dragon Ball</title>
   </head>
   <body>
     <!--  HEADER -->
     <header class="main-header">
-      <a href="index.html" class="logo-link">
-        <img src="./public/logo_esfera7.jpg" alt="Logo" class="logo-img" />
+      <a href="/index.html" class="logo-link">
+        <img src="/public/logo_esfera7.jpg" alt="Logo" class="logo-img" />
       </a>
 
       <h1 class="header-title">Dragon Ball - API</h1>
@@ -32,9 +34,11 @@
         <a href="/src/page/planetas.html">Planetas</a>
       </nav>
     </header>
-
-    <main id="app"></main>
-
+    <!-- MAIN -->
+    <main>
+      <h2 class="titulo-seccion">Planetas de Dragon Ball</h2>
+      <div id="listado-planetas"></div>
+    </main>
     <!--  FOOTER -->
     <footer class="main-footer">
       <div class="footer-top">
@@ -42,14 +46,14 @@
 
         <div class="social-icons">
           <a href="https://facebook.com" target="_blank" aria-label="Facebook">
-            <img src="./public/facebook.jpg" alt="Facebook" />
+            <img src="/public/facebook.jpg" alt="Facebook" />
           </a>
           <a
             href="https://instagram.com"
             target="_blank"
             aria-label="Instagram"
           >
-            <img src="./public/instagram.jpg" alt="Instagram" />
+            <img src="/public/instagram.jpg" alt="Instagram" />
           </a>
         </div>
 
@@ -63,6 +67,6 @@
         <p>© 2025 Nuestro sitio web. Todos los derechos reservados.</p>
       </div>
     </footer>
-    <script type="module" src="/src/main.js" defer></script>
+    <script type="module" src="/src/planetas/planetas.js"></script>
   </body>
 </html>
