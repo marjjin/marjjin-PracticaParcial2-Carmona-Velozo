@@ -24,7 +24,7 @@ El proyecto fue desarrollado con **Vite Vanilla (HTML, CSS y JavaScript)**, con 
 
 ## ⚙️ Instrucciones Básicas para Ejecutar el Proyecto
 
-Primero necesitás tener Git instalado. Luego:
+### Primero necesitás tener Git instalado. Luego:
 
 1. Abrí la página del repositorio en GitHub.
 
@@ -34,28 +34,28 @@ Primero necesitás tener Git instalado. Luego:
 
 4. Escribí:
 
-git clone <URL-del-repo>
+- git clone <URL-del-repo>
 
-## En este caso:
+### En este caso:
 
-git clone https://github.com/marjjin/marjjin-PracticaParcial2-Carmona-Velozo.git
+- git clone https://github.com/marjjin/marjjin-PracticaParcial2-Carmona-Velozo.git
 
 Esto crea una carpeta local con todos los archivos del proyecto.
 
 ### 2️⃣ Entrar a la carpeta del proyecto
 
-cd nombre-del-repo
+- cd nombre-del-repo
 
 Ejemplo:
 (Busca el nombre de la carpeta que contiene el proyecto)
 
-cd dragon-ball-z-api
+- cd dragon-ball-z-api
 
 ### 3️⃣ Instalar dependencias (si el proyecto las tiene)
 
 Si el proyecto usa Node.js, Vite, React, Vue, etc., habrá un archivo package.json. Entonces ejecutá:
 
-npm install
+- npm install
 
 Esto descarga todas las dependencias necesarias.
 
@@ -63,11 +63,11 @@ Esto descarga todas las dependencias necesarias.
 
 Para un proyecto con Vite Vanilla JS:
 
-npm run dev
+- npm run dev
 
 La terminal va a mostrar una URL local, normalmente algo como:
 
-Local: http://localhost:5173
+- Local: http://localhost:5173
 
 Abrí esa URL en tu navegador y vas a ver la aplicación funcionando.
 
