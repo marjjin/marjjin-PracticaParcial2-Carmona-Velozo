@@ -35,20 +35,20 @@ h1 {
 
 #app {
   max-width: 100%;
-  margin: 120px auto 0;
+  margin: 0;
   padding: 0;
   text-align: center;
 }
 
 @media (max-width: 768px) {
   #app {
-    margin: 100px auto 0;
+    margin: 0;
   }
 }
 
 @media (max-width: 600px) {
   #app {
-    margin: 90px auto 0;
+    margin: 0;
   }
 }
 
