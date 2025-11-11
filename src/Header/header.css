@@ -47,7 +47,7 @@
   font-family: "Impact", "Arial Black", sans-serif;
 }
 
-/* --- Enlaces de la derecha --- */
+/* --- Enlaces de la derecha ---- */
 .nav-links {
   display: flex;
   gap: 1.5rem;
