@@ -1,0 +1,333 @@
+/* Contenedor principal de favoritos */
+#favoritos-container {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.favoritos-section {
+  margin-bottom: 3rem;
+}
+
+/* Título de sección */
+.section-title {
+  font-family: "Impact", "Arial Black", sans-serif;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  color: #000;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #ffd700 0%, #ff6b00 100%);
+  border: 5px solid #000;
+  border-radius: 10px;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 0 #fff, 3px 3px 0 rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px;
+}
+
+/* Grid de favoritos */
+.favoritos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Mensaje cuando no hay favoritos */
+.empty-message {
+  text-align: center;
+  padding: 3rem 1rem;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: #666;
+  font-family: "Comic Sans MS", "Arial", sans-serif;
+  font-weight: bold;
+  background: #f5f5f5;
+  border: 3px dashed #ccc;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+/* Card de favorito - Mismo estilo que las otras páginas */
+.card-favorito {
+  position: relative;
+  background: #fff;
+  border: 5px solid #000;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.3), 12px 12px 0 rgba(255, 107, 0, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  animation: popIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.card-favorito:hover {
+  transform: translateY(-10px) rotate(-2deg);
+  box-shadow: 12px 12px 0 rgba(0, 0, 0, 0.4), 16px 16px 0 rgba(255, 215, 0, 0.3);
+  border-color: #ff6b00;
+}
+
+/* Botón de eliminar (corazón roto) */
+.remove-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 3px solid #000;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  font-size: 1.5rem;
+}
+
+.remove-btn:hover {
+  transform: scale(1.1);
+  background: #ff6b00;
+  box-shadow: 0 0 10px rgba(255, 107, 0, 0.5);
+}
+
+.remove-btn::before {
+  content: "💔";
+}
+
+/* Título del item */
+.card-favorito h3 {
+  background: #fff;
+  color: #000;
+  text-align: center;
+  font-size: clamp(0.85rem, 3vw, 1.2rem);
+  padding: clamp(0.5rem, 2vw, 0.7rem);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: clamp(1px, 0.5vw, 2px);
+  font-weight: 900;
+  border-bottom: 5px solid #000;
+  font-family: "Impact", "Arial Black", sans-serif;
+  text-shadow: 2px 2px 0 #ff6b00, 3px 3px 0 #ffd700;
+}
+
+/* Contenedor de imagen */
+.card-image-container {
+  position: relative;
+  width: 100%;
+  height: clamp(180px, 35vw, 260px);
+  background: radial-gradient(circle at 20% 30%, #ffeb3b 2px, transparent 2px),
+    radial-gradient(circle at 60% 70%, #ffeb3b 2px, transparent 2px),
+    linear-gradient(180deg, #ffd700 0%, #ff6b00 50%, #ff8c00 100%);
+  background-size: 40px 40px, 50px 50px, 100% 100%;
+  background-position: 0 0, 20px 20px, 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-bottom: 5px solid #000;
+}
+
+.card-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  filter: contrast(1.2) saturate(1.3) drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+}
+
+.card-favorito:hover .card-image-container img {
+  transform: scale(1.1);
+}
+
+/* Información del item */
+.card-favorito p {
+  background: #fff;
+  color: #000;
+  padding: clamp(0.3rem, 1.5vw, 0.4rem) clamp(0.5rem, 2vw, 0.7rem);
+  margin: 0;
+  font-size: clamp(0.7rem, 2vw, 0.85rem);
+  font-weight: bold;
+  border-bottom: 3px solid #000;
+  font-family: "Comic Sans MS", "Arial", sans-serif;
+}
+
+.card-favorito p:last-child {
+  border-bottom: none;
+}
+
+.card-favorito p strong {
+  color: #ff6b00;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin-right: 0.5rem;
+  font-size: clamp(0.75rem, 2vw, 0.95rem);
+  letter-spacing: 1px;
+}
+
+/* Animación */
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(-5deg);
+  }
+  50% {
+    transform: scale(1.05) rotate(2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .favoritos-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .favoritos-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.8rem;
+  }
+
+  #favoritos-container {
+    padding: 1.8rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .section-title {
+    font-size: clamp(1.3rem, 3.5vw, 2rem);
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .favoritos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  #favoritos-container {
+    padding: 1.5rem;
+  }
+
+  .favoritos-section {
+    margin-bottom: 2rem;
+  }
+
+  .card-favorito h3 {
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
+    padding: clamp(0.4rem, 1.5vw, 0.6rem);
+  }
+
+  .card-favorito p {
+    font-size: clamp(0.65rem, 1.8vw, 0.8rem);
+    padding: clamp(0.25rem, 1vw, 0.35rem) clamp(0.4rem, 1.5vw, 0.6rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .favoritos-grid {
+    gap: 1.2rem;
+  }
+
+  #favoritos-container {
+    padding: 1.2rem;
+  }
+
+  .remove-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
+    top: 8px;
+    right: 8px;
+  }
+
+  .card-image-container {
+    height: clamp(150px, 35vw, 220px);
+  }
+}
+
+@media (max-width: 480px) {
+  .favoritos-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  #favoritos-container {
+    padding: 1rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    padding: 0.8rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .empty-message {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    padding: 2rem 0.8rem;
+  }
+
+  .favoritos-section {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  #favoritos-container {
+    padding: 0.8rem;
+  }
+
+  .remove-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 280px) {
+  #favoritos-container {
+    padding: 0.5rem;
+  }
+
+  .favoritos-grid {
+    gap: 0.8rem;
+  }
+
+  .card-favorito h3 {
+    font-size: 0.75rem;
+    padding: 0.3rem;
+  }
+
+  .card-image-container {
+    height: 140px;
+  }
+
+  .remove-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 1.1rem;
+  }
+
+  .section-title {
+    font-size: 1rem;
+    padding: 0.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .empty-message {
+    font-size: 0.85rem;
+    padding: 1.5rem 0.5rem;
+  }
+
+  .favoritos-section {
+    margin-bottom: 1rem;
+  }
+}
