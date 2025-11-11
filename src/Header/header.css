@@ -1,0 +1,107 @@
+.main-header {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ff6b00;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  padding: 20px 20px;
+  z-index: 1000;
+}
+
+/* --- Imagen del lado izquierdo --- */
+.logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+  transition: transform 0.3s;
+}
+
+.logo-img:hover {
+  transform: scale(1.1);
+}
+
+/* --- Título centrado --- */
+.header-title {
+  flex: 1;
+  text-align: center;
+  font-size: clamp(1.2rem, 5vw, 2.2rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  color: #fff;
+  text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+    -1px 1px 0 #000, 1px 1px 0 #000;
+  font-family: "Impact", "Arial Black", sans-serif;
+}
+
+/* --- Enlaces de la derecha --- */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 23px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffd700;
+}
+
+/* --- Responsivo --- */
+@media (max-width: 768px) {
+  .main-header {
+    padding: 15px 10px;
+  }
+
+  .logo-img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .header-title {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    letter-spacing: 1px;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-header {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 10px;
+  }
+
+  .header-title {
+    text-align: center;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    font-size: 16px;
+  }
+}

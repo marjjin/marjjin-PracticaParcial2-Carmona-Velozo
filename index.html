@@ -5,14 +5,58 @@
     <link
       rel="icon"
       type="image/svg+xml"
-      href="public/logo_dragonballapi.jpg"
+      href="./public/logo_dragonballapi.jpg"
     />
+    <link rel="stylesheet" href="src/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dragon Ball</title>
   </head>
   <body>
-    <header id="header"></header>
+    <!--  HEADER -->
+    <header class="main-header">
+      <a href="index.html" class="logo-link">
+        <img src="./public/logo_esfera7.jpg" alt="Logo" class="logo-img" />
+      </a>
+
+      <h1 class="header-title">Dragon Ball Z - API</h1>
+
+      <nav class="nav-links">
+        <a href="#">Tus Favoritos</a>
+        <a href="#">Personajes</a>
+        <a href="#">Planetas</a>
+      </nav>
+    </header>
+
     <main id="app"></main>
-    <script type="module" src="/src/main.js"></script>
+
+    <!--  FOOTER -->
+    <footer class="main-footer">
+      <div class="footer-top">
+        <h2>Seguinos en nuestras redes</h2>
+
+        <div class="social-icons">
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+            <img src="./public/facebook.jpg" alt="Facebook" />
+          </a>
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            aria-label="Instagram"
+          >
+            <img src="./public/instagram.jpg" alt="Instagram" />
+          </a>
+        </div>
+
+        <p class="footer-description">
+          Este sitio ofrece información sobre el universo Dragon Ball, sus
+          personajes y planetas.
+        </p>
+      </div>
+
+      <div class="footer-descriptiontwo">
+        <p>© 2025 Nuestro sitio web. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+    <script type="module" src="/src/main.js" defer></script>
   </body>
 </html>
