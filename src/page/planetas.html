@@ -67,7 +67,10 @@
         <p>© 2025 Nuestro sitio web. Todos los derechos reservados.</p>
       </div>
     </footer>
-    <script type="module" src="../Header/header.js"></script>
+    <script type="module">
+      import { initHeader } from '../Header/header.js';
+      initHeader();
+    </script>
     <script type="module" src="../planetas/planetas.js"></script>
   </body>
 </html>
