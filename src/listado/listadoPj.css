@@ -190,8 +190,8 @@
   font-family: "Comic Sans MS", "Arial", sans-serif;
 }
 
-.card-personaje p:last-child {
-  border-bottom: none;
+.card-personaje p:last-of-type {
+  border-bottom: 3px solid #000;
 }
 
 .card-personaje p strong {
@@ -201,6 +201,36 @@
   margin-right: 0.5rem;
   font-size: clamp(0.75rem, 2vw, 0.95rem);
   letter-spacing: 1px;
+}
+
+/* Botón de detalles */
+.details-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #ffd700 0%, #ff6b00 100%);
+  border: 3px solid #000;
+  border-top: 3px solid #000;
+  border-radius: 0 0 5px 5px;
+  padding: clamp(0.5rem, 2vw, 0.8rem);
+  font-family: "Impact", "Arial Black", sans-serif;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #000;
+  font-weight: 900;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 1px 1px 0 #fff;
+}
+
+.details-btn:hover {
+  background: linear-gradient(135deg, #ff6b00 0%, #ffd700 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.details-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Animación */
