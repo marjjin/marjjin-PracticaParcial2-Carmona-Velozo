@@ -6,7 +6,6 @@ import {
   isFavorite,
   STORAGE_KEYS,
 } from "../utils/localStorage.js";
-import { initModal, openCharacterModal } from "../modal/modal.js";
 
 async function fetchListadoPersonajes() {
   try {
@@ -25,9 +24,6 @@ async function fetchListadoPersonajes() {
 export async function renderListadoPersonajes() {
   const listado = document.querySelector("#listado-personajes");
   if (!listado) return;
-
-  // Inicializar el modal
-  initModal();
 
   const data = await fetchListadoPersonajes();
   const personajes = data.items || data;
@@ -51,10 +47,6 @@ export async function renderListadoPersonajes() {
       <p><strong>Raza:</strong> ${personaje.race}</p>
       <p><strong>KI:</strong> ${personaje.ki}</p>
       <p><strong>Género:</strong> ${personaje.gender}</p>
-      
-      <button class="details-btn" data-id="${
-        personaje.id
-      }">Ver Detalles</button>
     `;
 
     // Event listener para el botón de favorito
@@ -63,12 +55,6 @@ export async function renderListadoPersonajes() {
       e.stopPropagation();
       const isNowFavorite = toggleFavorite(STORAGE_KEYS.CHARACTERS, personaje);
       favoriteBtn.classList.toggle("active", isNowFavorite);
-    });
-
-    // Event listener para el botón de detalles
-    const detailsBtn = card.querySelector(".details-btn");
-    detailsBtn.addEventListener("click", () => {
-      openCharacterModal(personaje);
     });
 
     listado.appendChild(card);
